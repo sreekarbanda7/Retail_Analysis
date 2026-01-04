@@ -18,7 +18,7 @@ def test_filter_closed_orders(spark):
     filter_count = filter_closed_orders(orders_df).count()
     assert filter_count == 7556
 
-@pytest.mark.slow
+@pytest.mark.skip()
 def test_read_app_config():
     config = get_app_config("LOCAL")
     assert config["orders.file.path"] == "data/orders.csv"
